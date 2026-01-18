@@ -1,5 +1,7 @@
 # ⚡ SemCache
 
+[![PyPI](https://img.shields.io/pypi/v/semcache-rs.svg)](https://pypi.org/project/semcache-rs/)
+[![Downloads](https://img.shields.io/pypi/dm/semcache-rs.svg)](https://pypi.org/project/semcache-rs/)
 [![Rust](https://img.shields.io/badge/built_with-Rust-dca282.svg)](https://www.rust-lang.org/)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
