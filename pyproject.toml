@@ -15,3 +15,4 @@ description = "High-performance, in-process embedding cache for LLMs. Powered by
 
 [tool.maturin]
 include = ["semcache_rs.pyi"]
+
