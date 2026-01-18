@@ -59,7 +59,7 @@ impl SemCache {
         if let Some(entry) = self.store.get(&hash) {
             if self.ttl_seconds > 0 {
                 let age = Utc::now() - entry.value().created_at;
-                if age.num_seconds() as u64 > self.ttl_seconds {
+                if age.num_seconds() as u64 >= self.ttl_seconds {
                     return None;
                 }
             }
@@ -168,7 +168,7 @@ impl SemCache {
 
             if self.ttl_seconds > 0 {
                 let age = Utc::now() - entry.created_at;
-                if age.num_seconds() as u64 > self.ttl_seconds {
+                if age.num_seconds() as u64 >= self.ttl_seconds {
                     continue;
                 }
             }
