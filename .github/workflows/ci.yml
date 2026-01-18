@@ -49,7 +49,7 @@ jobs:
           pip install maturin pytest
 
       - name: Build and install
-        run: maturin develop
+        run: pip install . --verbose
 
       - name: Run tests
         run: pytest tests/
