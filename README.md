@@ -1,7 +1,7 @@
 # ⚡ SemCache
 
 [![Rust](https://img.shields.io/badge/built_with-Rust-dca282.svg)](https://www.rust-lang.org/)
-[![Python](https://img.shields.io/badge/Python-3.13%2B-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 **SemCache** is a high-performance, in-process caching layer for LLM embeddings, powered by **Rust**.
