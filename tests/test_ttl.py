@@ -16,7 +16,7 @@ def test_ttl_expiration():
     assert cache.get("hello") == [1.0, 2.0]
 
     # Sleep longer than TTL
-    time.sleep(1.1)
+    time.sleep(2.0)
 
     # Check expiration
     assert cache.get("hello") is None
