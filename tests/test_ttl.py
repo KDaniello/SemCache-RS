@@ -1,18 +1,22 @@
 import semcache_rs
 import time
-
-# Cache live for 2 seconds
-cache = semcache_rs.SemCache(ttl=2)
+import pytest
 
 def gen(text):
     return [1.0, 2.0]
 
-print("📥 Put data...")
-cache.get_or_compute("hello", gen)
+def test_ttl_expiration():
+    # TTL = 1 second
+    cache = semcache_rs.SemCache(ttl=1)
 
-print("👀 Check immediately:", cache.get("hello")) # Must return list
+    # Put data
+    cache.get_or_compute("hello", gen)
+    
+    # Check immediately
+    assert cache.get("hello") == [1.0, 2.0]
 
-print("😴 Sleeping 3 seconds...")
-time.sleep(3)
+    # Sleep longer than TTL
+    time.sleep(1.1)
 
-print("👀 Check after sleep:", cache.get("hello")) # Must return None
+    # Check expiration
+    assert cache.get("hello") is None
