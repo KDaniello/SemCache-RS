@@ -1,0 +1,29 @@
+[package]
+name = "semcache-rs"
+version = "0.1.0"
+edition = "2024"
+description = "High-performance embedding cache for Python (PyO3 implementation)"
+license = "MIT"
+repository = "https://github.com/KDaniello/semcache-rs"
+keywords = ["python", "cache", "llm", "embedding", "simd"]
+categories = ["caching", "science"]
+authors = ["Danila Kantsavy <danielloysee@gmail.com>"]
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
+[lib]
+name = "semcache_rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.27.2", features = ["extension-module"] }
+dashmap = "6.1.0"
+sha2 = "0.10.9"
+hex = "0.4.3"
+chrono = { version = "0.4.43", features = ["serde"] }
+serde = { version = "1.0.228", features = ["derive"] }
+bincode = "1.3.3"
+simsimd = "6.5.12"
